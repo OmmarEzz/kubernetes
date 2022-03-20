@@ -1,0 +1,5 @@
+requests
+flask
+redis
+pystrich
+psycopg2-binary

@@ -1,0 +1,39 @@
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <script type="text/javascript">
+    function doSearch() { 
+      var xhttp = new XMLHttpRequest(); 
+      xhttp.onreadystatechange = function() { 
+        if (this.readyState == 4 && this.status == 200) { 
+           document.getElementById("result").innerHTML = xhttp.responseText; 
+        } 
+      };
+     
+      xhttp.open("GET", "/search?text=" + document.getElementById("query").value, true); 
+      xhttp.send(); 
+    } 
+  </script>
+ </head>
+ <body onload="doSearch();">         
+   <table border="0">
+    <tbody>
+     <tr><td align="center"><b>Docker's Indexed Search App v.1.00a</b></td></tr>
+     <tr>
+      <td>
+       <table border="0">
+        <tbody>
+         <tr>
+          <td>Search:</td>
+          <td><input id="query" type="text" onkeyup="doSearch();" onpaste="doSearch();"></td>
+          <td><input type="submit" onclick="doSearch();"></td> 
+         </tr>
+        </tbody>
+       </table> 
+      </td>
+     </tr>
+     <tr><td><center><p id="result"></p></center></td></tr>
+    </tbody>
+   </table>
+ </body>
+</html>
